@@ -15,6 +15,8 @@ Websites used for help:
 - For GenStack template implementation:
 https://www.techiedelight.com/stack-implementation-using-templates/
 https://www.geeksforgeeks.org/generics-in-c/
+-throw exceptions info
+https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm
 
 
 

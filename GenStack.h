@@ -12,11 +12,7 @@ class GenStack
   T *newStackArray;
   public:
     GenStack(); //default constructor
-    GenStack (int maxSize){
-      stackArray = new T[maxSize]; // on the heap because it is dynamic.
-      size = maxSize;
-      top = -1;
-    } //overloaded constructor
+    GenStack (int maxSize); //overloaded constructor
     ~GenStack(){
       delete[] stackArray;
     }; //destructor
