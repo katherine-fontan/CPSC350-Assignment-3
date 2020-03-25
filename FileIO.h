@@ -8,12 +8,12 @@ class FileIO{
 
   public:
 
-    FileIO();
+    FileIO(){}
     FileIO(string fileName);
 
     ~FileIO();
 
-    readFile(); //function to read file from command line input.
+    void readFile(); //function to read file from command line input.
 
     string fName;
     fstream inputFile;
