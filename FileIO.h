@@ -13,10 +13,11 @@ class FileIO{
 
     ~FileIO();
 
-    void readFile(); //function to read file from command line input.
+    char readFile(); //function to read file from command line input.
 
     string fName;
     fstream inputFile;
+    string fileInfo;
 
 
 

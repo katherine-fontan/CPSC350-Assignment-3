@@ -1,4 +1,4 @@
-#include "GenStack.h"
+#include "Delimiter.h"
 #include <iostream>
 
 using namespace std;
@@ -7,7 +7,7 @@ int main (int argc, char **argv)
 {
 
 
-  GenStack<char> myStack(50);
+  /*GenStack<char> myStack(50);
 
   myStack.push('K');
   myStack.push('L');
@@ -24,8 +24,10 @@ int main (int argc, char **argv)
   while(!myStack.isEmpty()){
     cout<< myStack.pop()<<endl;
   }
-  cout<< "is stack empty? " << myStack.isEmpty()<<endl;
+  cout<< "is stack empty? " << myStack.isEmpty()<<endl;*/
 
+  Delimiter *d = new Delimiter();
+  d -> delimiterChecker("test.txt");
 
 
   return 0;

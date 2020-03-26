@@ -7,12 +7,15 @@ FileIO::FileIO(string fileName){
 
   fName = fileName;
 }
+FileIO:: ~FileIO(){
+  
+}
 
-void FileIO:: readFile(){
+char FileIO:: readFile(){
 
   GenStack<char> stack(50); //initialize GenStack to 50
 
-  string fileInfo;
+
 
   //while loop to read the file
 
@@ -24,10 +27,10 @@ void FileIO:: readFile(){
     inputFile >> fileInfo;
     char charFile;
 
-      for(int i = 0; i<fileInfo.length(); ++i){
+      for(int i = 0; i < fileInfo.length(); ++i){
         charFile = fileInfo[i];
       }
-    //return charFile;
+    return charFile;
   }
 
   inputFile.close();
