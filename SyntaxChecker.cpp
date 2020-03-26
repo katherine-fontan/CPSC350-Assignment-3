@@ -13,7 +13,7 @@ SyntaxChecker:: ~SyntaxChecker(){
 
 char SyntaxChecker:: analyzeFile(){
   cout<< "starting to read file"<<endl;
-  //GenStack<char> stack(50); //initialize GenStack to 50
+
   GenStack<char> delimiters(10);
   GenStack<int> lineTracker(10);
   lineNumber = 1;
