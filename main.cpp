@@ -1,4 +1,4 @@
-#include "FileIO.h"
+#include "SyntaxChecker.h"
 #include <iostream>
 
 using namespace std;
@@ -6,33 +6,31 @@ using namespace std;
 int main (int argc, char **argv)
 {
 
-
-  /*GenStack<char> myStack(50);
-
-  myStack.push('K');
-  myStack.push('L');
-  myStack.push('M');
-  myStack.push('N');
-
-
-  cout << "popping: "<< myStack.pop()<<endl;
-  cout << "peek-a-boo: "<< myStack.peek()<<endl;
-
-  myStack.push('F');
-  cout<< "peek-a-boo: "<<myStack.peek()<<endl;
-
-  while(!myStack.isEmpty()){
-    cout<< myStack.pop()<<endl;
+  if(argc < 2){
+    cout<< "Invalid command line parameters!" <<endl;
+    return 1;
   }
-  cout<< "is stack empty? " << myStack.isEmpty()<<endl;*/
 
-  /*Delimiter *d = new Delimiter();
-  d -> delimiterChecker("test.txt");*/
+  string fName = argv[1];
+  string userChoice = "y";
 
-  FileIO *f = new FileIO("test.txt");
-  //d -> delimiterChecker("test.txt");
 
-  f->readFile();
+  while(userChoice == "y"){
+
+    SyntaxChecker* analyzer = new SyntaxChecker(fName);
+    analyzer->analyzeFile();
+
+    cout << "There are no delimiter errors in this file. Want to analyze another file (y or n)? ";
+    cin >> userChoice;
+
+    if(userChoice == "y"){
+      cout<< "What is the file name? ";
+      cin >> fName;
+    }
+
+    delete analyzer;
+  }
+  cout << "bye then!" <<endl;
 
 
   return 0;

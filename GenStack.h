@@ -23,7 +23,7 @@ class GenStack
     T pop(); //remove
 
     //aux/helper funcitons
-    T peek(); //AKA top
+    T peak(); //AKA top
     bool isEmpty();
     bool isFull();
 
@@ -66,7 +66,7 @@ T GenStack<T>::pop(){
 }
 
 template <typename T>
-T GenStack<T>::peek(){
+T GenStack<T>::peak(){
   return stackArray[top];
 }
 template <typename T>

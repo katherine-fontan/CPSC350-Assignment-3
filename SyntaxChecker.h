@@ -4,16 +4,16 @@
 
 using namespace std;
 
-class FileIO{
+class SyntaxChecker{
 
   public:
 
-    FileIO(){}
-    FileIO(string fileName);
+    SyntaxChecker(){}
+    SyntaxChecker(string fileName);
 
-    ~FileIO();
+    ~SyntaxChecker();
 
-    char readFile(); //function to read file from command line input.
+    char analyzeFile(); //function to read file from command line input.
 
     string fName;
     fstream inputFile;
