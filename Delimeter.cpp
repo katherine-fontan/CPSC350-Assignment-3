@@ -2,18 +2,13 @@
 #include <iostream>
 
 
-Delimiter:: Delimiter(){
+Delimiter:: Delimiter(){}
 
-
-}
-
-Delimiter:: ~Delimiter(){
-
-}
+Delimiter:: ~Delimiter(){}
 
 
 void Delimiter:: delimiterChecker(string fName){
-  //fname = "test.cpp";
+  //string fname = "test.cpp";
   file = new FileIO(fName);
   cout<<"starting checker";
   char c;

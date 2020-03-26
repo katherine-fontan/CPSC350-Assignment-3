@@ -1,4 +1,6 @@
 #include "FileIO.h"
+#include<fstream>
+#include<iostream>
 
 class Delimiter{
 

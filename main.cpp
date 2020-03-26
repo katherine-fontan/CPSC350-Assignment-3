@@ -1,4 +1,4 @@
-#include "Delimiter.h"
+#include "FileIO.h"
 #include <iostream>
 
 using namespace std;
@@ -26,8 +26,13 @@ int main (int argc, char **argv)
   }
   cout<< "is stack empty? " << myStack.isEmpty()<<endl;*/
 
-  Delimiter *d = new Delimiter();
-  d -> delimiterChecker("test.txt");
+  /*Delimiter *d = new Delimiter();
+  d -> delimiterChecker("test.txt");*/
+
+  FileIO *f = new FileIO("test.txt");
+  //d -> delimiterChecker("test.txt");
+
+  f->readFile();
 
 
   return 0;
