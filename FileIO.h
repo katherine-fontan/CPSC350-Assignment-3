@@ -18,6 +18,7 @@ class FileIO{
     string fName;
     fstream inputFile;
     string fileInfo;
+    int lineNumber;
 
 
 
