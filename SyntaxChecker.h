@@ -13,7 +13,7 @@ class SyntaxChecker{
 
     ~SyntaxChecker();
 
-    char analyzeFile(); //function to read file from command line input.
+    void analyzeFile(); //function to read file from command line input.
 
     string fName;
     fstream inputFile;
