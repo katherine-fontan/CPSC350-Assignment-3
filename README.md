@@ -1,5 +1,5 @@
 # CPSC350-Assignment-3
-Delimeters
+Delimiters
 
 
 Katherine Fontan
@@ -19,8 +19,8 @@ https://www.geeksforgeeks.org/generics-in-c/
 https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm
 - for delimiters
 https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
-- https://gist.github.com/mycodeschool/7207410
-- https://www.includehelp.com/data-structure-tutorial/check-for-balanced-parentheses-by-using-stacks-cpp-program.aspx
+https://gist.github.com/mycodeschool/7207410
+https://www.includehelp.com/data-structure-tutorial/check-for-balanced-parentheses-by-using-stacks-cpp-program.aspx
 
 
 
