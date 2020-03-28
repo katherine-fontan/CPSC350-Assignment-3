@@ -30,8 +30,8 @@ void SyntaxChecker:: analyzeFile(){
 
   //while loop to read the file
 
-  while(inputFile >> fileInfo){//getline(inputFile,fileInfo
-    //inputFile >> fileInfo;
+  while(inputFile >> fileInfo){
+
     ++lineNumber; //increment right when the while loop starts because line number is address to start at 0
     //for some reason incrementing at the end of while loop wasn't working
 
@@ -46,23 +46,8 @@ void SyntaxChecker:: analyzeFile(){
 
         }
 
-
         switch (charFile) {
-          /*case '{':
-            delimiters.push(charFile);
-            lineTracker.push(lineNumber);
-            cout<<"pushing {"<<endl;
-            break;
-          case '[':
-            delimiters.push(charFile);
-            lineTracker.push(lineNumber);
-            cout<<"pushing ["<<endl;
-            break;
-          case '(':
-            delimiters.push(charFile);
-            lineTracker.push(lineNumber);
-            cout<<"pushing ("<<endl;
-            break;*/
+
           case '}':
             //check if stack is empty
             if(delimiters.isEmpty()){
@@ -71,20 +56,6 @@ void SyntaxChecker:: analyzeFile(){
             }
             else if(delimiters.peak() != '{'){
 
-              if(lineTracker.peak() != lineNumber){
-
-                if(delimiters.peak()== '('){
-                  cout<< "Error found: \n-Line "<<lineTracker.peak()<< ": missing )"<< endl;
-                  exit(0);
-                }
-                else if (delimiters.peak() == '['){
-                  cout<< "Error found: \n-Line "<<lineTracker.peak()<< ": missing ]"<< endl;
-                  exit(0);
-                }
-
-
-              }
-              else{
                 if(delimiters.peak()== '['){
                   cout<< "Error found: \n-Line "<< lineNumber<<": "<< charFile<< " where ] should be." << endl;
                   exit(0);
@@ -93,14 +64,13 @@ void SyntaxChecker:: analyzeFile(){
                   cout<< "Error found: \n-Line "<< lineNumber<<": "<< charFile<< " where ) should be." << endl;
                   exit(0);
                 }
-              }
+
             }
             else if (delimiters.peak() == '{') {
 
 								delimiters.pop();
 								lineTracker.pop();
 						}
-
   					break;
 
           case ']':
@@ -110,17 +80,7 @@ void SyntaxChecker:: analyzeFile(){
             }
             if(delimiters.peak() != '['){
 
-              if(lineTracker.peak() != lineNumber){
-                if(delimiters.peak()== '{'){
-                  cout<< "Error found: \n-Line "<<lineNumber<< ": missing }"<< endl; // or lineTracker.peak()
-                  exit(0);
-                }
-                else if (delimiters.peak() == '('){
-                  cout<< "Error found: \n-Line "<<lineTracker.peak()<< ": missing )"<< endl;
-                  exit(0);
-                }
-              }
-              else{
+
                 if(delimiters.peak()== '{'){
                   cout<< "Error found: \n-Line "<< lineNumber<<": "<< charFile<< " where } should be." << endl;
                   exit(0);
@@ -129,13 +89,12 @@ void SyntaxChecker:: analyzeFile(){
                   cout<< "Error found: \n-Line "<< lineNumber<<": "<< charFile<< " where ) should be." << endl;
                   exit(0);
                 }
-              }
+
             }
             else if (delimiters.peak() == '[') {
 
 								delimiters.pop();
 								lineTracker.pop();
-
 						}
             break;
 
@@ -146,18 +105,7 @@ void SyntaxChecker:: analyzeFile(){
               }
               else if(delimiters.peak() != '('){
 
-                if(lineTracker.peak() != lineNumber){
 
-                   if(delimiters.peak()== '{'){
-                      cout<< "Error found: \n-Line "<<lineTracker.peak()<< ": missing }"<< endl;
-                      exit(0);
-                    }
-                    else if (delimiters.peak() == '['){
-                      cout<< "Error found: \n-Line "<<lineTracker.peak()<< ": missing ]"<< endl;
-                      exit(0);
-                    }
-                }
-                else{
                   if(delimiters.peak()== '{'){
                     cout<< "Error found: \n-Line "<< lineNumber<<": "<< charFile<< " where } should be." << endl;
                     exit(0);
@@ -166,21 +114,21 @@ void SyntaxChecker:: analyzeFile(){
                     cout<< "Error found: \n-Line "<< lineNumber<<": "<< charFile<< " where ) should be." << endl;
                     exit(0);
                   }
-                }
+
               }
               else if (delimiters.peak() == '(') {
                   delimiters.pop();
                   lineTracker.pop();
-
             }
             break;
 
         }//end of switch statement
+
     }//end of for loop
-   //++lineNumber;
+
   }//end of while loop
 
-cout<< "reached the end of file"<< endl;
+
   if(inputFile.eof()) {
 			if(!delimiters.isEmpty()) {
 				if (delimiters.peak() == '{') {
@@ -192,6 +140,10 @@ cout<< "reached the end of file"<< endl;
 				else if(delimiters.peak() == '{') {
           cout << "Error found: \n-Line "<< lineTracker.peak()<<": unaccompanied {" << endl;
 				}
+        else if(delimiters.peak() == '['){
+          cout<<  "Error found: \n-Line "<< lineTracker.peak()<<": unaccompanied [" << endl;
+        }
+
 				exit(0);
 			}
 
@@ -199,4 +151,5 @@ cout<< "reached the end of file"<< endl;
 
 
   inputFile.close();
+
 }//end of function

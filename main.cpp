@@ -20,7 +20,7 @@ int main (int argc, char **argv)
     SyntaxChecker* analyzer = new SyntaxChecker(fName);
     analyzer->analyzeFile();
 
-    cout << "There are no delimiter errors in this file. Want to analyze another file (yes or no)?  ";
+    cout << "There are no delimiter errors in this file!\nWant to analyze another file (yes or no)?  ";
     cin >> userChoice;
 
 
@@ -31,7 +31,7 @@ int main (int argc, char **argv)
 
     delete analyzer;
   }
-  cout << "bye then!" <<endl;
+  cout << "Bye then :)" <<endl;
 
 
   return 0;

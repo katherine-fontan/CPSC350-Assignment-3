@@ -1,5 +1,4 @@
-GenQueue(){
-//default constructor
-
-array[]; 
-}
+GenQueue[][
+ (//default constructor)
+array{
+]
