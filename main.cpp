@@ -12,18 +12,19 @@ int main (int argc, char **argv)
   }
 
   string fName = argv[1];
-  string userChoice = "y";
+  string userChoice = "yes";
 
 
-  while(userChoice == "y"){
+  while(userChoice == "yes"){
 
     SyntaxChecker* analyzer = new SyntaxChecker(fName);
     analyzer->analyzeFile();
 
-    cout << "There are no delimiter errors in this file. Want to analyze another file (y or n)? ";
+    cout << "There are no delimiter errors in this file. Want to analyze another file (yes or no)?  ";
     cin >> userChoice;
 
-    if(userChoice == "y"){
+
+    if(userChoice == "yes"){
       cout<< "What is the file name? ";
       cin >> fName;
     }
